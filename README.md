@@ -1,5 +1,5 @@
-# Defect Time to Resolution Trend Chart
+# Defect Arrival/Kill Chart
 
-This app plots the TTR (Time to Resolution) of defects closed each week broken down by priority.
+This app plots the arrival/kill rates of defects.
 
 ![](screenshot.png)

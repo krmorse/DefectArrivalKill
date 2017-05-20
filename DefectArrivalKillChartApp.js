@@ -3,6 +3,7 @@ Ext.define('DefectArrivalKillChartApp', {
     componentCls: 'app',
 
     layout: 'fit',
+    autoScroll: false,
 
     requires: [
         'ArrivalKillCalculator'
