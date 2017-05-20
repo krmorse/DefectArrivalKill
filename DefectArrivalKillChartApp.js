@@ -61,18 +61,6 @@ Ext.define('DefectArrivalKillChartApp', {
             modelNames = [this.model.typePath],
             gridBoardConfig = {
                 xtype: 'rallygridboard',
-                chartColors: [
-                    "#FF8200", // $orange
-                    "#F6A900", // $gold
-                    "#FAD200", // $yellow
-                    "#8DC63F", // $lime
-                    "#1E7C00", // $green_dk
-                    "#337EC6", // $blue_link
-                    "#005EB8", // $blue
-                    "#7832A5", // $purple,
-                    "#DA1884",  // $pink,
-                    "#C0C0C0" // $grey4
-                ],
                 toggleState: 'chart',
                 chartConfig: this._getChartConfig(),
                 plugins: [{
@@ -113,6 +101,10 @@ Ext.define('DefectArrivalKillChartApp', {
     _getChartConfig: function() {
         return {
             xtype: 'rallychart',
+            chartColors: [
+                "#B81B10", // $red
+                "#005EB8", // $blue
+            ],
             storeType: 'Rally.data.wsapi.Store',
             storeConfig: {
                 context: this.getContext().getDataContext(),
