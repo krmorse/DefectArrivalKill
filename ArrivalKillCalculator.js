@@ -14,18 +14,25 @@ Ext.define('ArrivalKillCalculator', {
             killData = this._groupData(closedDefects, 'ClosedDate'),
             categories = _.keys(arrivalData),
             arrivalSeries = { name: 'Arrival', type: 'column', data: [] },
-            killSeries = { name: 'Kill', type: 'column', data: [] };
+            killSeries = { name: 'Kill', type: 'column', data: [] },
+            netSeries = { name: 'Net', type: 'line', data: [] };
 
+        var net = 0;
         _.each(categories, function(category) {
             var arrivalGroup = arrivalData[category] || [],
-                killGroup = killData[category] || [];
-            arrivalSeries.data.push(arrivalGroup.length);
-            killSeries.data.push(killGroup.length);
+                killGroup = killData[category] || [],
+                arrived = arrivalGroup.length,
+                killed = killGroup.length;
+            
+            net = net + (arrived - killed);
+            arrivalSeries.data.push(arrived);
+            killSeries.data.push(killed);
+            netSeries.data.push(net);
         }, this);
 
         return {
             categories: categories,
-            series: [arrivalSeries, killSeries]
+            series: [arrivalSeries, killSeries, netSeries]
         };
     },
 

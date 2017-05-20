@@ -104,7 +104,8 @@ Ext.define('DefectArrivalKillChartApp', {
             xtype: 'rallychart',
             chartColors: [
                 "#B81B10", // $red
-                "#005EB8", // $blue
+                "#005EB8", // $blue,
+                "#000000" // $black
             ],
             storeType: 'Rally.data.wsapi.Store',
             storeConfig: {
